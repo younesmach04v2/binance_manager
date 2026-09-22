@@ -1,0 +1,19 @@
+{
+  "appId": "com.aymane.binancemanager",
+  "appName": "Binance Manager",
+  "webDir": "out/mobile",
+  "server": {
+    "androidScheme": "http",
+    "cleartext": true
+  },
+  "android": {
+    "allowMixedContent": true,
+    "backgroundColor": "#0b0f17"
+  },
+  "plugins": {
+    "CapacitorNodeJS": {
+      "nodeDir": "nodejs",
+      "startMode": "manual"
+    }
+  }
+}

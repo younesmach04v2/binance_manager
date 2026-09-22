@@ -1,0 +1,23 @@
+appId: com.aymane.binancemanager
+productName: Binance Manager
+directories:
+  buildResources: build
+  output: dist
+files:
+  - out/main/**
+  - out/preload/**
+  - out/renderer/**
+  - package.json
+  - "!node_modules/@capacitor/**"
+  - "!node_modules/capacitor-nodejs/**"
+asar: true
+win:
+  target:
+    - target: nsis
+      arch: [x64]
+  artifactName: ${productName}-Setup-${version}.${ext}
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+publish: null

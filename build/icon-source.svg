@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#232C3D"/>
+      <stop offset="1" stop-color="#0B0F16"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#C98A0A"/>
+      <stop offset="0.5" stop-color="#F0B90B"/>
+      <stop offset="1" stop-color="#FFD75E"/>
+    </linearGradient>
+  </defs>
+
+  <!-- plate -->
+  <rect x="0" y="0" width="256" height="256" rx="58" fill="url(#bg)"/>
+  <rect x="3" y="3" width="250" height="250" rx="55" fill="none" stroke="#F0B90B" stroke-opacity="0.22" stroke-width="3"/>
+
+  <!-- the stop ladder: each tread is a rung the stop climbs to -->
+  <path d="M 44 206 H 86 V 162 H 128 V 118 H 170 V 74 H 212"
+        fill="none" stroke="url(#gold)" stroke-width="21"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- the target the ladder runs to -->
+  <circle cx="212" cy="74" r="10" fill="#0B0F16"/>
+  <circle cx="212" cy="74" r="10" fill="none" stroke="#FFD75E" stroke-width="7"/>
+
+  <!-- entry: where risk starts, one R below the first tread -->
+  <circle cx="44" cy="206" r="9" fill="#F0B90B"/>
+</svg>

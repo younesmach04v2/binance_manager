@@ -1,0 +1,113 @@
+@import 'tailwindcss' source('.');
+
+@theme {
+  --color-bg: #0b0f17;
+  --color-panel: #111827;
+  --color-panel-2: #161f31;
+  --color-border: #1f2a3d;
+  --color-muted: #8b98ad;
+  --color-text: #e6ebf3;
+  --color-accent: #f0b90b;
+  --color-accent-dim: #c99a08;
+  --color-gain: #22c55e;
+  --color-loss: #ef4444;
+  --color-info: #3b82f6;
+  --font-sans: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Cascadia Code', 'Consolas', ui-monospace, monospace;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+}
+
+input,
+textarea,
+.selectable {
+  user-select: text;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2a3650 transparent;
+}
+
+.num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.input {
+  @apply w-full rounded-md border border-border bg-bg px-3 py-2 text-sm text-text outline-none transition;
+}
+.input:focus {
+  @apply border-accent/70 ring-2 ring-accent/20;
+}
+.input:disabled {
+  @apply opacity-50;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition disabled:cursor-not-allowed disabled:opacity-50;
+}
+.btn-primary {
+  @apply bg-accent text-black hover:bg-accent-dim;
+}
+.btn-ghost {
+  @apply border border-border bg-transparent text-text hover:bg-panel-2;
+}
+.btn-danger {
+  @apply bg-loss/90 text-white hover:bg-loss;
+}
+.btn-gain {
+  @apply bg-gain/90 text-black hover:bg-gain;
+}
+.btn-sm {
+  @apply px-2 py-1 text-xs;
+}
+
+.card {
+  @apply rounded-xl border border-border bg-panel p-4;
+}
+
+.table {
+  @apply w-full text-sm;
+}
+.table th {
+  @apply sticky top-0 z-10 bg-panel px-3 py-2 text-left text-xs font-semibold tracking-wide text-muted uppercase;
+}
+.table td {
+  @apply border-t border-border px-3 py-2 align-middle;
+}
+.table tbody tr:hover td {
+  @apply bg-panel-2/60;
+}
+
+.tag {
+  @apply inline-flex items-center rounded-full bg-panel-2 px-2 py-0.5 text-xs text-muted;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.fade-in {
+  animation: fadeIn 150ms ease-out;
+}
